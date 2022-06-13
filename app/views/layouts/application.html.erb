@@ -15,10 +15,12 @@
 
   <body>
     <div id="app">
-      <p>{{ message }} a123</p>
+      <p>{{ message }}</p>
     </div>
+
     <%= yield %>
     
   <%= javascript_pack_tag 'hello_vue' %>
+  <%= stylesheet_pack_tag 'hello_vue'  %> 
   </body>
 </html>
