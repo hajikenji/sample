@@ -1,0 +1,13 @@
+index
+
+<br>
+<% @tasks_all.each do |task| %>
+  <%= task.id %>
+  <%= task.title %>
+  <%= task.content %>
+  <%= button_to "delete", task, method: :delete %>
+  <br>
+<% end %>
+
+<br>
+<%= link_to "new", new_task_path %>

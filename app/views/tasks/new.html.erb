@@ -1,0 +1,7 @@
+<p>new</p>
+
+<%= form_with(model: @task, local: true) do |form| %>
+  <input type="text" name="title">
+  <input type="text-area" name="content">
+  <input type="submit">
+<% end %>
