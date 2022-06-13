@@ -1,13 +1,40 @@
-index
+
+<p id="index-top">index</p>
+<p id="info-message"></p>
 
 <br>
 <% @tasks_all.each do |task| %>
   <%= task.id %>
   <%= task.title %>
   <%= task.content %>
-  <%= button_to "delete", task, method: :delete %>
+  <%= button_to "delete", task, method: :delete, class: :delete_button %>
   <br>
 <% end %>
 
 <br>
 <%= link_to "new", new_task_path %>
+
+<p id="test-jquery">jQuery稼働テスト</p>
+
+<h1>Ajax#index</h1>
+<p id="hoge">赤色になるよ</p>
+
+<script>
+  $("#hoge").css("color","red")
+
+  $("#index-top").css("color", "blue")
+  $("#index-top").hover(function () {
+    $(this).css("color", "red");
+    $(this).text("マウス重ね検知！")
+  },
+  function(){
+    $(this).css("color", "blue");
+    $(this).text("index")
+  })
+
+  $(".delete_button").click(function(){
+    console.log('aaa')
+    $("#info-message").text("消去されました")
+  })
+</script>
+

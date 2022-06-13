@@ -20,6 +20,7 @@ class TasksController < ApplicationController
     @task = Task.find_by(id: params[:id])
     @task.destroy
     redirect_to tasks_path
+    # render "index"
     
   end
   

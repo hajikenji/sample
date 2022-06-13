@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.7'
 
 # Unknown alias: default (Psych::BadAlias) のエラーが出たため下記を追記
 gem 'psych', '~> 3.1'
+# jQuery
+gem 'jquery-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
