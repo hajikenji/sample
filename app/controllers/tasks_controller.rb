@@ -2,7 +2,6 @@ class TasksController < ApplicationController
 
   def index
     @tasks_all = Task.all
-    
   end
 
   def new
@@ -23,6 +22,12 @@ class TasksController < ApplicationController
     # render "index"
     
   end
+
+  def content
+    @tasks_all = Task.all
+    render json: @tasks_all
+  end
+  
   
   
   private
