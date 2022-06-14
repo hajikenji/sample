@@ -7,7 +7,7 @@
 
 import Vue from 'vue'
 import {createApp} from 'vue/dist/vue.esm-bundler';
-import App from '../app.vue'
+import App from './app.vue'
 
 // document.addEventListener('DOMContentLoaded', () => {
 //   const app = new Vue({
@@ -17,6 +17,7 @@ import App from '../app.vue'
 
 //   console.log(app)
 // })
+
 
 const appdata = {
   data() {
@@ -31,7 +32,17 @@ const appdata = {
 }
 
 const app = createApp(appdata)
-app.mount('#app')
+app.component('hello', {
+  data(){
+    return {
+      message2: 'helohelo'
+    }
+  }
+  ,
+  template: '<%= link_to "Show this user", user %>'
+})
+// app.mount('#app-hello')
+
 
 // The above code uses Vue without the compiler, which means you cannot
 // use Vue to target elements in your existing html templates. You would

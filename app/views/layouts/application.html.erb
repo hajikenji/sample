@@ -14,13 +14,15 @@
   </head>
 
   <body>
-    <div id="app">
+    <%# <div id="app">
       <p>{{ message }}</p>
-    </div>
+      <%# <hello /> %>
+    </div> %>
 
     <%= yield %>
     
   <%= javascript_pack_tag 'hello_vue' %>
   <%= stylesheet_pack_tag 'hello_vue'  %> 
+  <%= javascript_pack_tag 'main' %>
   </body>
 </html>
