@@ -7,10 +7,10 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script
-  src="https://code.jquery.com/jquery-3.6.0.js"
-  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"><script>
+    <%# script src="https://unpkg.com/vue-router@4.0.5/dist/vue-router.global.js"></script %>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -20,9 +20,9 @@
     </div> %>
 
     <%= yield %>
-    
-  <%= javascript_pack_tag 'hello_vue' %>
-  <%= stylesheet_pack_tag 'hello_vue'  %> 
-  <%= javascript_pack_tag 'main' %>
+
+    <%= javascript_pack_tag 'hello_vue' %>
+    <%= stylesheet_pack_tag 'hello_vue'  %> 
+    <%= javascript_pack_tag 'main' %>
   </body>
 </html>

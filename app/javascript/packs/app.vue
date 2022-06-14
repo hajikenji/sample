@@ -1,7 +1,13 @@
 <template>
   <div id="app">
-    <p>{{ message }}</p>
-    <Spa/>
+    <router-link to="/users">top</router-link>
+    <br>
+    <router-link to="/tasks">tasks</router-link>
+    <br>
+    <router-link to="/new">new</router-link>
+    <!-- <p>{{ message }}</p>
+    <Spa/> -->
+    <router-view></router-view>
   </div>
 </template>
 
@@ -14,17 +20,15 @@
 //   }
 // }
 
-import { createApp } from 'vue'
-import Spa from './components/spa.vue'
+// import { createApp } from 'vue'
+// import Spa from './components/spa.vue'
 
 export default {
-  components: {
-    Spa
-  }
-  ,
+  // components: {
+  //   Spa
+  // }
   data(){
     return {
-      message: '親コンポーネント'
     }
   }
 }

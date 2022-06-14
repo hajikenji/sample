@@ -7,5 +7,8 @@
 // createApp(spa).mount("#app")
 
 import { createApp } from 'vue'
+import { router } from './router'
 import Spa from './app.vue'
-createApp(Spa).mount("#app")
+const app = createApp(Spa)
+app.use(router)
+app.mount("#app")

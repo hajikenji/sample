@@ -1,23 +1,47 @@
 <template>
   <div class="">
     <p>{{ message }}</p>
+    
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>title</th>
+      <th>content</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr v-for="(task, index) in task_all_api" v-bind:key="index">
+      <td>{{ task.id }}</td>
+      <td>{{ task.title }}</td>
+      <td>{{ task.content }}</td>
+    </tr>
+  </tbody>
+</table>
+    
   </div>
 </template>
 
 <script>
 
-
 export default {
   name: 'Spa',
   data() {
     return {
-      message: 'this is component',
+      message: 'this is child component',
+      task_all_api: []
     }
   },
   created() {
     // this.message = 'vue'
     console.log(this.message);
   },
+  mounted(){
+    axios
+      .get('/api/task')
+      .then(response => {this.task_all_api = response.data});
+    console.log(Object.prototype.toString.call(this.task_all_api));
+  }
 
 }
 
