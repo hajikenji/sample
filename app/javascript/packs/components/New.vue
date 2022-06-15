@@ -1,22 +1,20 @@
 <template>
   <div class="">
-    <p>{{ message }}</p>
-    <p>{{ messageSuccessfulCreation }}</p>
-    <!-- <p>{{ seeingProperty }}</p> -->
-    <form v-on:submit.prevent="createTask">
-      <input type="text" v-model="task.title">
-      <br>
-      <input type="text-area" v-model="task.content">
-      <br>
-      <button type="submit">submit</button>
-    </form>
+    <Form :messageSuccessfulOperation="messageSuccessfulOperation" :message="message"
+      v-on:sendingData="createTask"  />
   </div>
 </template>
 
 <script>
 
+import Form from './form/Form.vue'
+
 export default {
   name: 'Top',
+  components: {
+    Form
+  }
+  ,
   data() {
     return {
       message: 'this is new',
@@ -24,21 +22,21 @@ export default {
         title: '',
         content: ''
       },
-      messageSuccessfulCreation: ''
+      messageSuccessfulOperation: ''
     }
   },
   created() {
   },
   methods: {
-    createTask(){
+    createTask(data){
       console.log('submit押された');
       axios
-        .post('/tasks', this.task)
+        .post('/tasks', data)
         .then(response =>{
           console.log(response)
         })
 
-      this.messageSuccessfulCreation = '送信完了!'
+      this.messageSuccessfulOperation = '送信完了!'
     }
   },
   // computed: {
