@@ -33,7 +33,9 @@ import Form from './form/Form.vue';
         axios
           .patch(`/tasks/${this.$route.params.id}`, sendToApi);
 
-        this.messageSuccessfulOperation = '更新完了!';
+        // this.messageSuccessfulOperation = '更新完了!';
+
+        this.$router.push({path: '/tasks', query: {info: '更新完了!'}});
       }
     }
   }

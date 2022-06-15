@@ -36,7 +36,9 @@ export default {
           console.log(response)
         })
 
-      this.messageSuccessfulOperation = '送信完了!'
+      // this.messageSuccessfulOperation = '送信完了!'
+
+      this.$router.push({path: '/tasks', query: {info: '作成完了!'}});
     }
   },
   // computed: {

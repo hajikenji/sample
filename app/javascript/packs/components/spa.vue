@@ -40,14 +40,13 @@ export default {
   },
   created() {
     // this.message = 'vue'
-    console.log(this.message);
+    console.log(this.$route.query.info);
+    this.message = this.$route.query.info;
   },
   mounted(){
     axios
       .get('/api/task')
       .then(response => {this.task_all_api = response.data});
-      // 下記はデバッグ用
-    console.log(Object.prototype.toString.call(this.task_all_api));
   },
   methods: {
     deleteAction(id){
@@ -56,6 +55,8 @@ export default {
       axios
         .get('/api/task')
         .then(response => {this.task_all_api = response.data});
+
+      this.message = '削除完了!';
     }
   }
 
