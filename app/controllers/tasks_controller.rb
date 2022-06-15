@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  # before_action :set_csrf_token_header
 
   def index
     @tasks_all = Task.all
@@ -32,7 +33,7 @@ class TasksController < ApplicationController
   
   private
   def task_params
-    params.permit(:title, :content)
+    params.require(:task).permit(:title, :content)
   end
   
   

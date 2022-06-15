@@ -15,6 +15,7 @@
       <td>{{ task.id }}</td>
       <td>{{ task.title }}</td>
       <td>{{ task.content }}</td>
+      <td ><input type="button" value="delete" v-on:click="deleteAction(task.id)"></td>
     </tr>
   </tbody>
 </table>
@@ -40,7 +41,17 @@ export default {
     axios
       .get('/api/task')
       .then(response => {this.task_all_api = response.data});
+      // 下記はデバッグ用
     console.log(Object.prototype.toString.call(this.task_all_api));
+  },
+  methods: {
+    deleteAction(id){
+      axios
+        .delete(`/tasks/${id}`);
+      axios
+        .get('/api/task')
+        .then(response => {this.task_all_api = response.data});
+    }
   }
 
 }

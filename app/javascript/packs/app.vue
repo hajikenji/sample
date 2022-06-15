@@ -22,6 +22,11 @@
 
 // import { createApp } from 'vue'
 // import Spa from './components/spa.vue'
+axios.defaults.headers.common = {
+    'X-Requested-With': 'XMLHttpRequest',
+    'X-CSRF-TOKEN' : document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+    
+};
 
 export default {
   // components: {

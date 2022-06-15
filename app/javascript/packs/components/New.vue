@@ -1,11 +1,12 @@
 <template>
   <div class="">
     <p>{{ message }}</p>
+    <p>{{ messageSuccessfulCreation }}</p>
     <!-- <p>{{ seeingProperty }}</p> -->
-    <form v-on:submit="createTask">
-      <input type="text" v-model="taskTitle">
+    <form v-on:submit.prevent="createTask">
+      <input type="text" v-model="task.title">
       <br>
-      <input type="text-area" v-model="taskContent">
+      <input type="text-area" v-model="task.content">
       <br>
       <button type="submit">submit</button>
     </form>
@@ -19,16 +20,25 @@ export default {
   data() {
     return {
       message: 'this is new',
-      taskTitle: '',
-      taskContent: ''
+      task: {
+        title: '',
+        content: ''
+      },
+      messageSuccessfulCreation: ''
     }
   },
   created() {
-    console.log(this.message);
   },
   methods: {
     createTask(){
-      
+      console.log('submit押された');
+      axios
+        .post('/tasks', this.task)
+        .then(response =>{
+          console.log(response)
+        })
+
+      this.messageSuccessfulCreation = '送信完了!'
     }
   },
   // computed: {

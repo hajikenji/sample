@@ -15,7 +15,6 @@ export default {
   },
   created() {
     // this.message = 'vue'
-    console.log(this.message);
   },
 
 }
