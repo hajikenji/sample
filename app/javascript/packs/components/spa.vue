@@ -16,6 +16,8 @@
       <td>{{ task.title }}</td>
       <td>{{ task.content }}</td>
       <td ><input type="button" value="delete" v-on:click="deleteAction(task.id)"></td>
+      <router-link v-bind:to="updateUrl + task.id">update</router-link>
+      <router-view></router-view>
     </tr>
   </tbody>
 </table>
@@ -30,7 +32,10 @@ export default {
   data() {
     return {
       message: 'this is child component',
-      task_all_api: []
+      task_all_api: [],
+
+      // update用
+      updateUrl: '/update/'
     }
   },
   created() {
@@ -55,6 +60,7 @@ export default {
   }
 
 }
+
 
 // const app = createApp(appdata)
 // app.component('hello', {

@@ -5,6 +5,8 @@
     <router-link to="/tasks">tasks</router-link>
     <br>
     <router-link to="/new">new</router-link>
+    <!-- <br>
+    <router-link to="/update">update</router-link> -->
     <!-- <p>{{ message }}</p>
     <Spa/> -->
     <router-view></router-view>
