@@ -41,6 +41,7 @@ export default {
   created() {
     // this.message = 'vue'
     console.log(this.$route.query.info);
+    // 更新完了や作成完了のメッセージもここ
     this.message = this.$route.query.info;
   },
   mounted(){
